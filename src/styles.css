@@ -6,13 +6,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #202124;
+  --secondary-color: #e2e2e2;
+  --tertiary-color: #f8bc12;
+}
+
 html {
   font-family: "Roboto", sans-serif;
 }
 
 body {
-  background-color: #202124;
-  color: #e2e2e2;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .header {
@@ -30,7 +36,7 @@ body {
   position: relative;
   width: 80%;
   margin: 32px auto 50px auto;
-  background: #202124;
+  background: var(--primary-color);
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
@@ -67,10 +73,17 @@ body {
 
 .create-note .add-note {
   background-color: #f8bc12;
-  padding: 1rem;
   border-radius: 50%;
   border: 0;
   position: absolute;
   bottom: -20%;
   right: 5%;
+  height: 3rem;
+  width: 3rem;
+  outline: none;
+  color: var(--primary-color);
+}
+
+.create-note .add-note:active {
+  transform: scaleY(0.95) scaleX(0.95);
 }
