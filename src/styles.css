@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #202124;
+  color: #e2e2e2;
+}
+
+.header {
+  box-shadow: inset 0 -1px 0 0 #5f6368;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  align-items: center;
+}
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.create-note {
+  position: relative;
+  width: 80%;
+  margin: 32px auto 50px auto;
+  background: #202124;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
+  border: 1px solid #5f6368;
+  height: fit-content;
+}
+
+.create-note textarea {
+  background-color: inherit;
+  border: 0;
+  outline: none;
+  color: #e2e2e2;
+  font-family: inherit;
+  /* margin: 0px 41px 0px 0px; */
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.create-note input {
+  background-color: inherit;
+  border: 0;
+  outline: none;
+  color: #e2e2e2;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.create-note .add-note {
+  background-color: #f8bc12;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  bottom: -20%;
+  right: 5%;
+}
