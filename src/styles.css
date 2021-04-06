@@ -12,6 +12,9 @@
   --tertiary-color: #f8bc12;
 }
 
+.App {
+}
+
 html {
   font-family: "Roboto", sans-serif;
 }
@@ -83,6 +86,8 @@ body {
   width: 3rem;
   outline: none;
   color: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
 }
 
 .create-note .add-note:active {
@@ -95,7 +100,7 @@ body {
   border-radius: 0.5rem;
   box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
   border: 1px solid #5f6368;
-  width: 240px;
+  width: 20%;
   margin: 1rem;
   float: left;
 }
@@ -109,4 +114,22 @@ body {
   margin-bottom: 0.5rem;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.note button {
+  background: inherit;
+  border: 0;
+  color: var(---secondary-color);
+  position: relative;
+  float: right;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 2rem;
+  display: grid;
+  place-items: center;
 }

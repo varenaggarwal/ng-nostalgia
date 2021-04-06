@@ -1,35 +1,47 @@
 import { useState } from "react";
+import uuid from "react-uuid";
 
-export function CreateArea() {
-  const [note, setNote] = useState({ title: "", content: "" });
+export function CreateArea({ onAdd }) {
+  const [note, setNote] = useState({ id: uuid(), title: "", content: "" });
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleChange = (e) => {
-    setNote({ ...note, title: e.target.value });
+    const { name, value } = e.target;
+    setNote((preValue) => {
+      return { ...preValue, [name]: value };
+    });
   };
 
-  const handleChangeContent = (e) => {
-    setNote({ ...note, content: e.target.value });
+  const submitButton = (event) => {
+    onAdd(note);
+    setNote({ id: uuid(), title: "", content: "" });
+    event.preventDefault();
   };
 
   return (
     <div>
       <form className="create-note">
-        <input
-          value={note.title}
-          type="text"
-          placeholder="Title"
-          onChange={(e) => handleChange(e)}
-        />
+        {isExpanded && (
+          <input
+            value={note.title}
+            name="title"
+            type="text"
+            placeholder="Title"
+            onChange={handleChange}
+          />
+        )}
         <p>
           <textarea
             value={note.content}
             name="content"
             placeholder="Take a note.."
-            onChange={(e) => handleChangeContent(e)}
+            onChange={handleChange}
+            onClick={() => setIsExpanded(true)}
+            rows={isExpanded ? 3 : 1}
           ></textarea>
         </p>
-        <button className="add-note" type="submit">
-          <i class="fas fa-plus"></i>
+        <button onClick={submitButton} className="add-note">
+          <i className="fas fa-plus"></i>
         </button>
       </form>
     </div>

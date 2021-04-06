@@ -1,10 +1,11 @@
-export function Note() {
+export function Note({ title, content, onDelete }) {
   return (
     <div className="note">
-      <h1>My Note</h1>
-      <p>
-        Hey whats going oney whats going oney whats going oney whats going on
-      </p>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <button onClick={onDelete}>
+        <i className="fas fa-trash"></i>
+      </button>
     </div>
   );
 }
