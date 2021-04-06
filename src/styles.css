@@ -108,6 +108,7 @@ body {
 .note h1 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 
 .note p {
@@ -132,4 +133,28 @@ body {
   height: 2rem;
   display: grid;
   place-items: center;
+}
+.notes-container {
+  /* display: flex; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile */
+  .notes-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .note {
+    width: unset;
+  }
+
+  .create-note {
+    width: unset;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
